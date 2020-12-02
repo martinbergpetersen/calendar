@@ -15,12 +15,7 @@ def valid(information):
         return False
     between, key, password = extract(information)
     counter = {key: 0}
-
-    for char in password:
-        if char in counter:
-            counter[char] += 1
-
-    count = counter[key]
+    count = sum([1 for char in password if char == key])
     return count >= int(between[0]) and count <= int(between[1])
 
 
