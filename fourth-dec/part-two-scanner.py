@@ -49,7 +49,7 @@ def rules(items):
     else:
         return False
     pid = items["pid"]
-    pattern = re.compile("^\d{9}$")
+    pattern = re.compile(r"^\d{9}$")
     if pattern.match(pid):
         pass
     else:
